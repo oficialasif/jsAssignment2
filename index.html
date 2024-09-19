@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions with In-Page Console</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Functions Playground</h1>
+        <p>Use the in-page console to test the functions directly!</p>
+
+        <div class="instructions">
+            <h2>Demo Code:</h2>
+            <pre>
+// Function 1: calculateDifference(10, 5); // Returns: 5
+// Function 2: isOdd(7); // Returns: true
+// Function 3: findMin([10, 3, 5, 8]); // Returns: 3
+// Function 4: filterEvenNumbers([1, 2, 3, 4]); // Returns: [2, 4]
+// Function 5: sortArrayDescending([10, 3, 8, 7]); // Returns: [10, 8, 7, 3]
+// Function 6: lowercaseFirstLetter("Hello"); // Returns: "hello"
+// Function 7: countVowels("JavaScript"); // Returns: 3
+// Function 8: findAverage([10, 20, 30]); // Returns: 20
+            </pre>
+        </div>
+
+        <h2>Try it Yourself!</h2>
+        <textarea id="consoleInput" placeholder="Enter your code here..." rows="5"></textarea>
+        <button onclick="runCode()">Run Code</button>
+
+        <h3>Output:</h3>
+        <div id="consoleOutput"></div>
+    </div>
+
+    <script src="index.js"></script>
+    <script>
+        function runCode() {
+            const consoleInput = document.getElementById("consoleInput").value;
+            try {
+                const result = eval(consoleInput);
+                document.getElementById("consoleOutput").innerHTML = result !== undefined ? result : 'No output';
+            } catch (error) {
+                document.getElementById("consoleOutput").innerHTML = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
